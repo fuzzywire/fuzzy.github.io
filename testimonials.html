@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimonials - Fuzzy Wire Bouquet</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('products-images/background2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+     
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .logo a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      padding: 0;
+    }
+
+    ul li {
+      margin-right: 20px;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    ul li a:hover {
+      color: #f9a826;
+    }
+
+    #testimonials,
+    #submit-testimonial {
+      padding: 120px 20px 60px 20px;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    #testimonials h1,
+    #submit-testimonial h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .testimonial {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .testimonial p {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .testimonial h3 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      color: #f9a826;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #f9a826;
+      color: #000;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e6951b;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="products-images/lo.jpg" alt="flower logo" class="logo-img" />
+      <a href="index.html">Fuzzy Wire Bouquet</a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="howitworks.html">How It Works</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="tutorials.html">Tutorials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="support.html">Customer Support</a></li>
+            <li><a href="resources.html">Downloads/Resources</a></li>
+            <li><a href="newsletter.html">News Letter</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h1>What Our Customers Say</h1>
+    <div class="testimonial-container">
+      <div class="testimonial">
+        <p>"I absolutely love my Fuzzy Wire Bouquet! It's beautifully crafted and looks perfect in my living room."</p>
+        <h3>Necolle Failon.</h3>
+      </div>
+      <div class="testimonial">
+        <p>"Such a unique and charming gift idea! My friend loved the floral arrangement, and it still looks fresh after months."</p>
+        <h3>John Rey Bayonito.</h3>
+      </div>
+      <div class="testimonial">
+        <p>"The quality of the bouquets is amazing! I bought a bouquet for my mother, and she’s been showing it off to all her friends."</p>
+        <h3>Caith Leen Togueno.</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Submit Testimonial Section -->
+  <section id="submit-testimonial">
+    <h2>Share Your Experience</h2>
+    <form action="#">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <textarea name="testimonial" rows="4" placeholder="Your Testimonial" required></textarea>
+      <button type="submit">Submit Testimonial</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Fuzzy Wire Bouquet | All Rights Reserved</p>
+  </footer>
+
+</body>
+<script>
+  const Form = document.querySelector("form");
+  const testimonialcontainer = document.querySelector(".testimonial-container");
+
+  // Load testimonials from localStorage on page load
+  window.onload = function () {
+    const savedTestimonials = JSON.parse(localStorage.getItem("testimonials")) || [];
+    savedTestimonials.forEach(t => {
+      addTestimonialToDOM(t.name, t.message, false);
+    });
+  };
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = form.name.value.trim();
+    const message = form.testimonial.value.trim();
+
+    if (name && message) {
+      // Save to DOM and localStorage
+      addTestimonialToDOM(name, message, true);
+
+      // Clear form
+      form.reset();
+    }
+  });
+
+  function addTestimonialToDOM(name, message, saveToStorage = true) {
+    const testimonial = document.createElement("div");
+    testimonial.classList.add("testimonial");
+    testimonial.innerHTML = `
+      <p>"${message}"</p>
+      <h3>${name}</h3>
+    `;
+
+    // Insert at the top of the container
+    testimonialContainer.prepend(testimonial);
+
+    // Save to localStorage
+    if (saveToStorage) {
+      const saved = JSON.parse(localStorage.getItem("testimonials")) || [];
+      saved.unshift({ name, message }); // Add to start
+      localStorage.setItem("testimonials", JSON.stringify(saved));
+    }
+  }
+</script>
+
+<script>
+  
+  const form = document.querySelector("form");
+  const testimonialContainer = document.querySelector(".testimonial-container");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent page reload
+
+    const name = form.name.value.trim();
+    const message = form.testimonial.value.trim();
+
+    if (name && message) {
+      // Create new testimonial div
+      const testimonial = document.createElement("div");
+      testimonial.classList.add("testimonial");
+
+      testimonial.innerHTML = `
+        <p>"${message}"</p>
+        <h3>${name}</h3>
+      `;
+
+      // Append to testimonial container
+      testimonialContainer.appendChild(testimonial);
+
+      // Optionally, clear form
+      form.reset();
+    }
+  });
+</script>
+
+</html>

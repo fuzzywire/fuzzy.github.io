@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tutorials - Fuzzy Wire Bouquet</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('products-images/background2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .logo a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      padding: 0;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    ul li {
+      margin-right: 20px;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    ul li a:hover {
+      color: #f9a826;
+    }
+
+    #tutorials-section {
+      padding: 100px 20px 60px;
+      text-align: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    #tutorials-section h1 {
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+
+    .tutorial-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .tutorial-item {
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .tutorial-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .tutorial-item h3 {
+      font-size: 1.5rem;
+      color: #f9a826;
+      margin: 20px 0 10px;
+    }
+
+    .tutorial-item p {
+      font-size: 1rem;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .tutorial-item a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .tutorial-item a:hover {
+      color: #f9a826;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .tutorial-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tutorial-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="products-images/lo.jpg" alt="flower logo" class="logo-img">
+      <a href="index.html">Fuzzy Wire Bouquet</a>
+  </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="howitworks.html">How It Works</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="tutorials.html">Tutorials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="support.html">Customer Support</a></li>
+            <li><a href="resources.html">Downloads/Resources</a></li>
+            <li><a href="newsletter.html">News Letter</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Tutorials Section -->
+  <section id="tutorials-section">
+    <h1>Our Tutorials</h1>
+
+    <div class="tutorial-container">
+      <div class="tutorial-item">
+        <h3>How to Create a Simple Wire Bouquet</h3>
+        <p>Learn how to create a basic wire bouquet, perfect for beginners. This tutorial walks you through every step.</p>
+        <a href="https://www.tiktok.com/@fuzzy_wire_bouquet/video/7499347221381500167?_r=1&_t=ZS-8vz6IdYq8W8">Watch Now</a>
+      </div>
+
+      <div class="tutorial-item">
+        <h3>Advanced Flower Sculpting Techniques</h3>
+        <p>Take your flower crafting skills to the next level with detailed sculpting techniques and tips.</p>
+        <a href="https://vt.tiktok.com/ZSh8J4hC7/">Watch Now</a>
+      </div>
+
+      <div class="tutorial-item">
+        <h3>Adding Color to Your Wire Bouquets</h3>
+        <p>Learn how to bring your bouquet to life with vibrant color using paint  and creative materials.</p>
+        <a href="https://vt.tiktok.com/ZSh8Jx2JY/">Watch Now</a>
+      </div>
+
+      <div class="tutorial-item">
+        <h3>Wire Bouquet Gift Wrapping Ideas</h3>
+        <p>See how to wrap your wire bouquet with style and elegance — ideal for thoughtful gifts.</p>
+        <a href="https://vt.tiktok.com/ZSh8JE5xo/" target="_blank">Watch Now</a>
+      </div>
+
+      <div class="tutorial-item">
+        <h3>Creating Graduation Wire Bouquets</h3>
+        <p>Design beautiful wire bouquets with style and beautiful design — ideal for graduation .</p>
+        <a href="https://vt.tiktok.com/ZSh8Jwd3n/">Watch Now</a>
+      </div>
+
+      <div class="tutorial-item">
+        <h3>Designing Custom Bouquets for Special Occasions</h3>
+        <p>Perfect for weddings — create one-of-a-kind wire floral arrangements.</p>
+        <a href="https://vt.tiktok.com/ZSh8JGjCy/">Watch Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Fuzzy Wire Bouquet | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
